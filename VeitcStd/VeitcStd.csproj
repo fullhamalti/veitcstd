@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD041033-0CBB-443F-A115-457D7F17F6E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>veitcstd</RootNamespace>
+    <AssemblyName>VeitcStd</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET_2_0,ENABLE_NATIVE_INJECT,SIMS3VERSION_1672,USE_VMONOMETHOD,VEITC_USE_WIN32,VEITC_AUTO_INIT_CCTOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <NoStdLib>True</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <FileAlignment>8192</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET_2_0,ENABLE_NATIVE_INJECT,SIMS3VERSION_1672,USE_VMONOMETHOD,VEITC_USE_WIN32,VEITC_AUTO_INIT_CCTOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>true</Optimize>
+    <NoStdLib>True</NoStdLib>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <FileAlignment>8192</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <HintPath>..\Sims3Library\mscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ScriptCore">
+      <HintPath>..\Sims3Library\ScriptCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SimIFace">
+      <HintPath>..\Sims3Library\SimIFace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3GameplayObjects">
+      <HintPath>..\Sims3Library\Sims3GameplayObjects.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3GameplaySystems">
+      <HintPath>..\Sims3Library\Sims3GameplaySystems.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3Metadata">
+      <HintPath>..\Sims3Library\Sims3Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sims3StoreObjects">
+      <HintPath>..\Sims3Library\Sims3StoreObjects.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\Sims3Library\System.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\Sims3Library\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UI">
+      <HintPath>..\Sims3Library\UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="libcs.cs" />
+    <Compile Include="main.cs" />
+    <Compile Include="vassembly.cs" />
+    <Compile Include="vbinder.cs" />
+    <Compile Include="vcmethod.cs" />
+    <Compile Include="vdelegate.cs" />
+    <Compile Include="veamonoassembly.cs" />
+    <Compile Include="veamonoclass.cs" />
+    <Compile Include="veamonoimage.cs" />
+    <Compile Include="veamonomethod.cs" />
+    <Compile Include="veamonovtable.cs" />
+    <Compile Include="vfloat32.cs" />
+    <Compile Include="vfloat64.cs" />
+    <Compile Include="vnativefunctions.cs" />
+    <Compile Include="vnativeinject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="varray.cs" />
+    <Compile Include="vcustomattributes.cs" />
+    <Compile Include="vmethod.cs" />
+    <Compile Include="vmonoruntime.cs" />
+    <Compile Include="vobject.cs" />
+    <Compile Include="vthread.cs" />
+    <Compile Include="vvec2.cs" />
+    <Compile Include="vvec3.cs" />
+    <Compile Include="_thisassembly.cs" />
+    <Compile Include="vtype.cs" />
+    <Compile Include="vstacktrace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENSE.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
