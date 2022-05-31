@@ -38,7 +38,7 @@ namespace veitcstd
             public object unused3 = null;
         }
 
-        public unsafe static IntPtr GetNativeMonoVTable(object obj)
+        public static IntPtr GetNativeMonoVTable(object obj)
         {
             if (obj == null)
                 return default(IntPtr);
@@ -50,7 +50,7 @@ namespace veitcstd
         {
 #if SIMS3VERSION_1672
             var type = typeof(T);
-            if (type == null || type._impl.value == null)
+            if (type == null || type._impl.value.value == null)
                 return default(IntPtr);
 
             voidptr unknown = *(voidptr*)((voidptr)type._impl.value.value);
