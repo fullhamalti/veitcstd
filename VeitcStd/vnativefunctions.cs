@@ -34,12 +34,7 @@ namespace veitcstd
 #if SIMS3VERSION_1672
     public static class vnativefunctions 
     {
-        public struct filedata
-        {
-            public long len;
-            public IntPtr data;
-            public IntPtr handle;
-        }
+       
 
         [Flags]
         public enum mbtype : uint
@@ -1259,8 +1254,6 @@ namespace veitcstd
             return (ulong)obj.obj_address().value;
         }
 
-        // You need create a directory path!
-        // if directory not exists return 0xFFFFFFFF
         public unsafe static IntPtr CreateFile(string path)
         {
             if (!cache_done_veitc_native_file_create || path == null || path.Length == 0)
@@ -1269,6 +1262,8 @@ namespace veitcstd
         }
 
 
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public static extern IntPtr veitc_native_obj_get_address(object obj);
 
 
         /* TODO: Add Native Function
@@ -1282,8 +1277,6 @@ namespace veitcstd
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void veitc_native_exit_game(voidptr exitcode);
 
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public static extern IntPtr veitc_native_obj_get_address(object obj);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern uint veitc_native_obj_get_address_nonptr(object obj);

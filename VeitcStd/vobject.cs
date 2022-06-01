@@ -38,7 +38,14 @@ namespace veitcstd
             public object unused3 = null;
         }
 
-        public static IntPtr GetNativeMonoVTable(object obj)
+        public static IntPtr GetObjectAdderess(object obj)
+        {
+            if (obj == null)
+                return default(IntPtr);
+            return obj.obj_address();
+        }
+
+        public unsafe static IntPtr GetNativeMonoVTable(object obj)
         {
             if (obj == null)
                 return default(IntPtr);

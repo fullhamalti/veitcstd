@@ -74,6 +74,7 @@ namespace veitcstd
 
         public vstacktrace(bool needFileInfo)
         {
+            needFileInfo = false; // EAMono does not support StackFrame needFileInfo
             InitFrames(0, needFileInfo);
         }
 
@@ -84,6 +85,7 @@ namespace veitcstd
 
         public vstacktrace(int skipFrames, bool needFileInfo)
         {
+            needFileInfo = false;
             InitFrames(skipFrames, needFileInfo);
         }
         // unprotected mono mscorlib 
@@ -104,7 +106,7 @@ namespace veitcstd
         {
             if (methed == null)
                 throw new ArgumentNullException();
-            if (s_stack_frame_ == null) // GC low ram
+            if (s_stack_frame_ == null)
             {
                 s_stack_frame_ = new StackFrame();
             }

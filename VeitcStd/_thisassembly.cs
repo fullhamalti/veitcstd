@@ -20,6 +20,6 @@ namespace veitcstd
     {
         internal const string _name = "veitcstd";
         internal const string _license = "GNU Lesser General Public License 2.1+";
-        internal const string _version = "1.0";
+        internal const string _version = "1.2";
     }
 }

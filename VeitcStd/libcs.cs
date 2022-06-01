@@ -393,7 +393,17 @@ namespace veitcstd
         {
 #if SIMS3VERSION_1672
             vnativefunctions.veitc_native_force_gamecrash_noexhandle_init(false, true);
+#else
+            RuntimeMethodHandle.GetFunctionPointer(tointptr(1)); // call mono_assert
 #endif
+        }
+
+        public static void assert(bool c, string p)
+        {
+            if (!c)
+            {
+                while (p != null) { }
+            }
         }
 
         public static void assert(string p)

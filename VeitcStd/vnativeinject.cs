@@ -46,7 +46,7 @@ namespace veitcstd
             {
                 
 #if VEITC_USE_WIN32 && SIMS3VERSION_1672
-                vnativefunctions.init_class();
+                vdelegate.CallvFunction(vnativefunctions.init_class);
                 bool ok = vnativefunctions.RunExeUnProtectNativeLibrary();
                 var pp = vnativefunctions.RunExeUnProtect();
 #else
@@ -176,6 +176,7 @@ namespace veitcstd
 	            0xD0, 0xAD, 0x05, 0x00, 0xEB, 0xFE, 0x90, 0x90, 0x90
             };
 
+            // 0x00E46E00 in mono_assert(...)
             for (int i = 0; i < x86_inject.Length; i++)
             {
                 *(byte*)(0x00E46E00 + i) = x86_inject[i];

@@ -114,7 +114,7 @@ namespace veitcstd
             *(voidptr*)(ptr_a + 0x44) = 0;
         }
 
-        public static IntPtr MonoInterpreterTransformMethodFast(MethodBase method, bool safe, IntPtr threadContext)
+        public static IntPtr MonoInterpreterTransformMethodB(MethodBase method, bool safe, IntPtr threadContext)
         {
             IntPtr monoMethod;
 

@@ -19,7 +19,7 @@
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;NET_2_0,ENABLE_NATIVE_INJECT,SIMS3VERSION_1672,USE_VMONOMETHOD,VEITC_USE_WIN32,VEITC_AUTO_INIT_CCTOR</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET_2_0,ENABLE_NATIVE_INJECT,SIMS3VERSION_1672,USE_VMONOMETHOD,VETIC_USE_WIN32,VEITC_AUTO_INIT_CCTOR,VETIC_HAVE_SIMIFACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Optimize>true</Optimize>
@@ -34,7 +34,7 @@
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;NET_2_0,ENABLE_NATIVE_INJECT,SIMS3VERSION_1672,USE_VMONOMETHOD,VEITC_USE_WIN32,VEITC_AUTO_INIT_CCTOR</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET_2_0,ENABLE_NATIVE_INJECT,SIMS3VERSION_1672,USE_VMONOMETHOD,VETIC_USE_WIN32,VEITC_AUTO_INIT_CCTOR,VETIC_HAVE_SIMIFACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Optimize>true</Optimize>
@@ -42,6 +42,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <FileAlignment>8192</FileAlignment>
+	<LangVersion>3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
@@ -99,6 +100,7 @@
     <Compile Include="veamonovtable.cs" />
     <Compile Include="vfloat32.cs" />
     <Compile Include="vfloat64.cs" />
+    <Compile Include="vio.cs" />
     <Compile Include="vnativefunctions.cs" />
     <Compile Include="vnativeinject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="vmethod.cs" />
     <Compile Include="vmonoruntime.cs" />
     <Compile Include="vobject.cs" />
+    <Compile Include="vstring.cs" />
     <Compile Include="vthread.cs" />
     <Compile Include="vvec2.cs" />
     <Compile Include="vvec3.cs" />
